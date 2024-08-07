@@ -4,13 +4,17 @@
 # Em que minuto houve mais conexões ao servidor?
 
 # arquivo = open('apache_logs.txt', 'r')
-arquivo = open('teste.txt', 'r')
-lines = arquivo.readline().split()
+arquivo = open('apache_logs.txt', 'r')
 
-ipList = []
+linhas = arquivo.readlines()
+listaDeIps= set()
 
-print (lines[0])
-   
+for line in linhas:
+    linhaDividida = line.split(" ", 1)[0]
+    listaDeIps.add(linhaDividida)
+
+print(f"IPs Distintos: {len(listaDeIps)}")
+
 
 
 
